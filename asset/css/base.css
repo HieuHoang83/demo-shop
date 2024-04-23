@@ -1,0 +1,190 @@
+:root{
+    --white-color:#fff;
+    --black-color:#000;
+    --text-color:#333;
+    --primary-color:hwb(10 18% 7%);
+    --boder--color:#dbdbdb;
+    --header-height:120px;
+    --header__navbar-height:40px;
+    --header-body-height:calc(var(--header-height) - var(--header__navbar-height) );
+    --width-colum-2:16.66666667%;
+    --favourite-color:hwb(10 18% 7%);
+}
+*{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* animation */
+@keyframes fadein{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes fade-growth{
+    from{
+        transform: scale(0);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes modal-growth{
+    from{
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* modal */
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0,0, 0.3);
+    z-index: 1;
+}
+.modal__container{
+    position: relative;
+    margin:auto;
+    width: 500px;
+    background-color: white;
+    z-index: 2;
+    animation:modal-growth linear 0.1s;
+}
+/* btn */
+.btn{
+    min-width: 142px;
+    height: 34px;
+    text-decoration: none;
+    background-color:rgba(0, 0,0, 0.03) ;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    display: inline-flex;
+}
+.btn:hover{
+    cursor: pointer;
+    background-color:rgba(0, 0,0, 0.05) ;
+}
+.btn.btn--primary {
+    background-color: red;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+/* selection input */
+.selection-input{
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    position: relative;
+}
+.selection-input:hover .home-filter__selection-list{
+    display: block;
+}
+.home-filter__selection-list{
+    position: absolute;
+    top: 110%;
+    right: 0;
+    left: 0;
+    margin: 0px auto;
+    padding-left: 0px;
+    width: 100%;
+    display: none;
+    /* align-items: center; */
+    border-radius: 2px;
+    list-style: none;
+    background-color: white;
+    z-index: 1;
+    
+}
+.home-filter__selection-list::before{
+    content: "";
+    position: absolute;
+    right: 0px;
+    top: -5%;
+    /* background-color: black; */
+    height: 5px;
+    width: 100%;
+}
+.home-filter__selection-item{
+    height: 34px;
+    display: block;
+    /* align-items: center; */
+    padding: 10px 10px ;
+
+}
+.home-filter__selection-item-link{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 15px;
+}
+.home-filter__selection-item-link:hover{
+    color: var(--primary-color);
+}
+
+/* thanh chuyen trang */
+.pagination{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.pagination__item{
+    margin: 0px 8px;
+}
+.pagination__item-link{
+    display: block;
+    text-decoration: none;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 2px;
+    font-size: 2rem;
+    font-weight: 300;
+}
+.pagination__item-link-current{
+    background-color: #ee4d2d;
+    color: white;
+}
+.pagination__item-link-current:hover{
+    background-color:#ee4d2dde ;
+}
+.pagination__item-icon{
+    font-size: 1.5rem;
+}
